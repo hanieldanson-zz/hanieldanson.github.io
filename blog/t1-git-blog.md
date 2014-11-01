@@ -1,6 +1,6 @@
-# <h1>Phase 0 Technical Blog</h1>
+# Phase 0 Technical Blog <h1>
 
-## <h2>11/01/2014</h>
+## 11/01/2014 <h2>
 
 The first week of Phase 0 has flown by and I’m a little surprised how much I’ve learned in such a short period of time. I had a basic understanding of command line from dabbling with basic terminal commands over the years, but now I actually feel comfortable working in the command line environment. This is just the beginning!
 
