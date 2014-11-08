@@ -1,0 +1,92 @@
+body {
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 400px;font-size: 16px;color: white; background-color: #5B5A5A;
+
+}
+table {
+  background-color: gray;
+  padding-top: 5px;
+  padding-right: 30px;
+  padding-bottom: 5px;
+  padding-left: 30px;
+  border: 2px solid white;
+  border-radius: 5px;
+  margin-bottom: 5px;
+}
+table tr td a {
+  text-decoration: none;
+  color:white;
+}
+
+table tr td a:hover {
+  background-color:#5B5A5A;
+}
+
+#button1 {
+
+}
+
+#button2 {
+
+}
+
+#button3 {
+
+}
+
+#button4 {
+
+}
+
+#button5 {
+
+}
+
+#button6 {
+
+}
+
+
+#headerimg {
+  width:100%;
+  height:auto;
+  border: 1px solid gray;
+  border-radius: 2px;
+
+#twitter {
+  display: inline-block;
+}
+
+#facebook {
+  display: inline-block;
+}
+
+#linkedin {
+  display: inline-block;
+}
+
+}
+#profile {
+  width: 20%;
+  height: 20%;
+  padding: 1px 1px 1px 1px;
+  border: 1px solid white;
+  border-radius: 2px;
+  position: relative;
+  margin:-200px 0px 0px 50px;
+  display: inline-block;
+}
+
+#social {
+  border: none;
+
+}
+}
+body div {
+  height:auto;
+  width: 75%;
+  border: 2px solid black;
+  border-radius: 5px;
+  background-color: #308014;
+  float: left;
+}
