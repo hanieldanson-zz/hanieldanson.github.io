@@ -3,15 +3,15 @@ body {
   font-weight: 400px;font-size: 16px;color: white; background-color: #5B5A5A;
 
 }
-table {
-  background-color: gray;
-  padding-top: 5px;
-  padding-right: 30px;
-  padding-bottom: 5px;
-  padding-left: 30px;
+.mytable {
+  background-color:gray;
+  padding: 5px 20px 5px 20px;
   border: 2px solid white;
   border-radius: 5px;
   margin-bottom: 5px;
+}
+.mytable td {
+  padding-left: 10px;
 }
 table tr td a {
   text-decoration: none;
@@ -19,33 +19,8 @@ table tr td a {
 }
 
 table tr td a:hover {
-  background-color:#5B5A5A;
+  color: #71eeb8;
 }
-
-#button1 {
-
-}
-
-#button2 {
-
-}
-
-#button3 {
-
-}
-
-#button4 {
-
-}
-
-#button5 {
-
-}
-
-#button6 {
-
-}
-
 
 #headerimg {
   width:100%;
@@ -67,18 +42,27 @@ table tr td a:hover {
 
 }
 #profile {
-  width: 20%;
-  height: 20%;
   padding: 1px 1px 1px 1px;
-  border: 1px solid white;
   border-radius: 2px;
   position: relative;
   margin:-200px 0px 0px 50px;
   display: inline-block;
 }
-
-#social {
-  border: none;
+.profile-img {
+  border:1px solid #fff;
+  width:250px;
+  height:220px;
+}
+.social {
+  text-align: center;
+}
+.social tr {
+  width:100%;
+}
+.social td {
+  padding:10px;
+  width:33%;
+}
 
 #bloglinks {
   color: white;
@@ -89,7 +73,7 @@ table tr td a:hover {
   padding-top: 15px;
 }
 
-body div {
+#mybodydiv {
   height:auto;
   width: 75%;
   border: 2px solid black;
