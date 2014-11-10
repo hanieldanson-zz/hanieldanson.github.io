@@ -23,7 +23,7 @@ table tr td a {
   text-decoration: none;
 }
 
-.mylinks a:hover {
+.mylinks a:hover, #profile a:hover {
   color: #71eeb8;
 }
 
@@ -55,21 +55,20 @@ table tr td a {
   position: relative;
   margin:-200px 0px 0px 50px;
   display: inline-block;
+  text-align: center;
 }
+
+#profile a {
+  color: #FFF;
+  text-decoration: none;
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
 .profile-img {
   border:1px solid #fff;
   width:250px;
   height:220px;
-}
-.social {
-  text-align: center;
-}
-.social tr {
-  width:100%;
-}
-.social td {
-  padding:10px;
-  width:33%;
 }
 
 .bloglinks {
