@@ -89,3 +89,8 @@ table tr td a {
   background-color: #308014;
   float: left;
 }
+
+.codesnip {
+  margin: 10px 0px 0px 10px;
+  width: 50%;
+}
