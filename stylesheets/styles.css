@@ -1,8 +1,12 @@
 body {
   font-family: 'Quicksand', sans-serif;
   font-weight: 400px;font-size: 16px;color: white; background-color: #5B5A5A;
-
 }
+
+h2, h3, h4 {
+  font-weight: normal;
+}
+
 .mytable {
   background-color:gray;
   padding: 5px 20px 5px 20px;
@@ -27,14 +31,27 @@ table tr td a {
   color: #71eeb8;
 }
 
+.date {
+  color: #B8B8C0;
+  margin-right: 10px;
+  text-align: justify;
+
+}
+
 .globallinks {
   padding: 20px;
 }
+
+.weaksauce {
+  font-weight: 300;
+}
+
 #headerimg {
   width:100%;
-  height:auto;
+  height: 500px;
   border: 1px solid gray;
   border-radius: 2px;
+}
 
 #twitter {
   display: inline-block;
@@ -48,7 +65,6 @@ table tr td a {
   display: inline-block;
 }
 
-}
 #profile {
   padding: 1px 1px 1px 1px;
   border-radius: 2px;
