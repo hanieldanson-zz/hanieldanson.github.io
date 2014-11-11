@@ -1,6 +1,10 @@
 body {
   font-family: 'Quicksand', sans-serif;
-  font-weight: 400px;font-size: 16px;color: white; background-color: #5B5A5A;
+  font-weight: 400px;
+  font-size: 16px;
+  color: white;
+  background-color: #5B5A5A;
+  margin: 0px;
 }
 
 h2, h3, h4 {
@@ -32,6 +36,25 @@ table tr td a {
   color: #71eeb8;
 }
 
+.profile-img {
+  border:1px solid #fff;
+  width:250px;
+  height:220px;
+}
+
+.bloglinks {
+  color: white;
+  font-size: 18px;
+  font-decoration: none;
+  display: block;
+  padding-left: 25px;
+  padding-top: 15px;
+}
+
+.bodypad {
+  padding: 0px 10px 0px 10px;
+}
+
 .date {
   color: #B8B8C0;
   margin-right: 10px;
@@ -42,6 +65,13 @@ table tr td a {
   padding: 20px;
 }
 
+.commands {
+  background: black;
+  max-width: 21%;
+  color: white;
+  font-style: italic;
+  padding: 5px 5px 5px 5px;
+}
 .weaksauce {
   font-weight: 300;
 }
@@ -81,21 +111,6 @@ table tr td a {
   margin-left: 10px;
 }
 
-.profile-img {
-  border:1px solid #fff;
-  width:250px;
-  height:220px;
-}
-
-.bloglinks {
-  color: white;
-  font-size: 18px;
-  font-decoration: none;
-  display: block;
-  padding-left: 25px;
-  padding-top: 15px;
-}
-
 #mybodydiv {
   height:auto;
   width: 75%;
@@ -103,6 +118,16 @@ table tr td a {
   border-radius: 5px;
   background-color: #308014;
   float: left;
+}
+
+#footer {
+  height: 50px;
+  padding-top: 25px;
+  box-shadow:0px 0px 5px 0px white;
+  background-color: gray;
+  color: white;
+  text-align: center;
+  margin-top: 100px;
 }
 
 .codesnip {
