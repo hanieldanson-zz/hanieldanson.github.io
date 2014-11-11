@@ -17,6 +17,7 @@ h2, h3, h4 {
 .mytable td {
   padding-left: 10px;
 }
+
 table tr td a {
   text-decoration: none;
   color:white;
@@ -35,7 +36,6 @@ table tr td a {
   color: #B8B8C0;
   margin-right: 10px;
   text-align: justify;
-
 }
 
 .globallinks {
