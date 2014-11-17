@@ -66,17 +66,17 @@
         <pre class="commands">&lt;class = Array.new(1)&gt;
         puts class.size # Displays the array size of 1
         </pre>
-        <pre class="commands">&lt;class = Array.new(3, “waffles”)&gt;
-        Puts “#{class}” # Displays waffleswaffleswaffles
+        <pre class="commands">&lt;class = Array.new(3, “waffles”)
+        Puts “#{class}” # Displays waffleswaffleswaffles&lt;
         </pre>
         <p>The great thing about arrays is that you don’t have to write out a huge list of numbers if they all come in sequence. For example, if you need to put the numbers 0 through 10 in an array, you don’t have to list them out like this:
         <pre class="commands">&lt;array = [0,1,2,3,4,5,6,7,8,9,10]&gt;
         </pre>
         </p>
         <p>Instead, you can use a range to save time as shown in the example below. Additionally, you can create a class to identify the array, which can then be called with .at(#) to return the number at that index position.
-        <pre class="commands">&lt;arraynums = Array(0..10)&gt;
+        <pre class="commands">&lt;arraynums = Array(0..10)
         Num = arraynums.at(5)
-        Puts “#{num}”
+        Puts “#{num}”&gt;
         </pre>
         </p>
         <p>One of the biggest differences between the two is key value mapping. You can map values to an array as long as the values are all integers. If not, a hash is the way to go because the keys for a hash can be strings as well. Here is an example with the key as a string that points to an integer value:
