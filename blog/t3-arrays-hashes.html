@@ -1,0 +1,72 @@
+    <!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="My Personal Website">
+  <meta name="author" content="Daniel Hanson">
+  <link href='http://fonts.googleapis.com/css?family=Quicksand:300,400,700' rel='stylesheet' type='text/css'>
+  <link type="text/css" rel="stylesheet" href="../stylesheets/styles.css"/>
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+
+  <title>Daniel Hanson</title>
+</head>
+<body>
+  <table align="right" class="mytable mylinks">
+    <tr>
+      <td>
+        <a href="../index.html">Home</a>
+      </td>
+      <td>
+        <a href="../about/index.html">About</a>
+      </td>
+      <td>
+        <a href="../experience/index.html">Experience</a>
+      </td>
+      <td>
+        <a href="../education/index.html">Education</a>
+      </td>
+      <td>
+        <a href="../blog/index.html">Blog</a>
+      </td>
+      <td>
+        <a href="../projects/index.html">Projects</a>
+      </td>
+      <td>
+        <a href="mailto:hanson.e.daniel@gmail.com">Contact</a>
+      </td>
+    </tr>
+  </table>
+  <img id="headerimg" src="../imgs/cover.jpg"/>
+    <div id="profile">
+      <img src="../imgs/Mug_updated.jpg" class="profile-img" />
+      <div>
+        <a href="https://twitter.com/daniel_hanson" class="fa fa-twitter fa-2x">
+        </a>
+        <a href="https://github.com/hanieldanson" class="fa fa-github fa-2x">
+        </a>
+        <a href="https://linkedin.com/in/dehanson" class="fa fa-linkedin fa-2x">
+        </a>
+      </div>
+  </div>
+  <div class="bodypad">
+      <h2>Smothered & Covered</h2>
+      <h3>An overview of arrays and hashes </h3>
+      <h4>10/16/2014</hr>
+        <p>Arrays and hashes are both indexed groups that have a wide variety of applications. They can contain several types of objects including strings and integers, but there are some key differences that will be discussed later. To create an array, you need to put the desired elements into square brackets, which are called an array literal in this case. Here is an example of an array:
+        <pre class="commands">array = [100, "waffles", 2, "eggs"]
+        </pre>
+        </p>
+        <p>As you can see above, I put the string elements in quotes. If you need to construct an array that has lots of strings, you can simply use %w to simplify things like this:
+        <pre class="commands">array = %w[waffles eggs hashbrowns toast coffee]
+        </pre>
+        <p>One of the biggest differences between the two is key value mapping. You can map values to an array as long as the values are all integers. If not, a hash is the way to go because the keys for a hash can be strings as well. Here is an example with the key as a string that points to an integer value:
+          <pre class="commands">hash = {"Waffles" => 7,"Hashbrowns" => 11}
+          </pre>
+        </p>
+  </div>
+  <div id="footer">Daniel E. Hanson
+  </div>
+</body>
+</html>
