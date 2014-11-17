@@ -53,17 +53,42 @@
   <div class="bodypad">
       <h2>Smothered & Covered</h2>
       <h3>An overview of arrays and hashes </h3>
-      <h4>10/16/2014</hr>
-        <p>Arrays and hashes are both indexed groups that have a wide variety of applications. They can contain several types of objects including strings and integers, but there are some key differences that will be discussed later. To create an array, you need to put the desired elements into square brackets, which are called an array literal in this case. Here is an example of an array:
-        <pre class="commands">array = [100, "waffles", 2, "eggs"]
+      <h4>11/16/2014</hr>
+        <p>Arrays and hashes are both indexed groups that have a wide variety of applications. They can contain several types of objects including strings and integers, but there are some key differences that will be discussed later. To create an array, you can to the desired elements into square brackets, which are called an array literal. Here is an example of an array literal:
+        <pre class="commands">&lt;array = [100, "waffles", 2, "eggs"]&gt;
         </pre>
         </p>
         <p>As you can see above, I put the string elements in quotes. If you need to construct an array that has lots of strings, you can simply use %w to simplify things like this:
-        <pre class="commands">array = %w[waffles eggs hashbrowns toast coffee]
+        <pre class="commands">&lt;array = %w[waffles eggs hashbrowns toast coffee]&gt;
         </pre>
+        </p>
+        <p>Alternatively, you can create an array by using the new class method. This entails creating a new class and setting the size or length of the array. Within this same structure, you can create an array with an assigned value to each element. Two examples, the first creating a new class and setting the size and the second an array with an assigned value to the element, are below:
+        <pre class="commands">&lt;class = Array.new(1)&gt;
+        puts class.size # Displays the array size of 1
+        </pre>
+        <pre class="commands">&lt;class = Array.new(3, “waffles”)&gt;
+        Puts “#{class}” # Displays waffleswaffleswaffles
+        <p>The great thing about arrays is that you don’t have to write out a huge list of numbers if they all come in sequence. For example, if you need to put the numbers 0 through 10 in an array, you don’t have to list them out like this:
+        <pre class="commands">&lt;array = [0,1,2,3,4,5,6,7,8,9,10]&gt;
+        </pre>
+        </p>
+        <p>Instead, you can use a range to save time as shown in the example below. Additionally, you can create a class to identify the array, which can then be called with .at(#) to return the number at that index position.
+        <pre class="commands">&lt;arraynums = Array(0..10)&gt;
+        Num = arraynums.at(5)
+        Puts “#{num}”
+        </pre>
+        </p>
         <p>One of the biggest differences between the two is key value mapping. You can map values to an array as long as the values are all integers. If not, a hash is the way to go because the keys for a hash can be strings as well. Here is an example with the key as a string that points to an integer value:
-          <pre class="commands">hash = {"Waffles" => 7,"Hashbrowns" => 11}
-          </pre>
+        <pre class="commands">&lt;hash = {"Waffles" => 7,"Hashbrowns" => 11}&gt;
+        </pre>
+        </p>
+        <p>However, many times you will want to use a symbol instead of a string when using a hash. This is an important concept that I didn’t fully grasp until I researched the benefits. It turns out that using symbols is way more efficient than using strings because they are essentially immutable strings, which means that they cannot be modified no matter how many times they are referenced in your code. On the flip side, strings are mutable and can be modified. If you are referencing a string in your code multiple times, Ruby has to store these as separate string objects since strings are mutable. Using a symbol in the hash instead of a string saves memory because Ruby understands that the symbol is immutable. As a result of the implicit nature of symbols, Ruby will compare the hash function of the object  id against the hashed object id of keys that are stored within the hash without having to evaluate . The benefit of this is that it is much faster than comparing strings, which have to be evaluated individually. An example of using symbols in a hash:
+        <pre class="commands">&lt;menu = Hash.new
+        menu[:entree] = ‘waffles’
+        menu[:firstside] = ‘hashbrowns’
+        menu[:secondside] = ‘grits’
+        puts menu # Displays {:entree=>”waffles”, :firstside=>”hashbrowns”, :secondside=>”grits”}&gt;
+        </pre>
         </p>
   </div>
   <div id="footer">Daniel E. Hanson
