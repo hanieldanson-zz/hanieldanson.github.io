@@ -50,11 +50,33 @@
         </a>
       </div>
   </div>
-  <div class="bodypad">
-      <h2>Daniel E. Hanson</h2>
-      <h3>Sub-heading</h3>
-      <h4>10/5/2014</hr>
-        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+    <div class="bodypad">
+      <h2>Fun with Enumerables</h2>
+      <h3>A brief look at the map method</h3>
+      <h4>11/23/2014</hr>
+        <p>This week's technical blog post is about everyone's favorite enumerable method, map. Enumerable map is an extremely useful method that gives Rubyists' the flexibility to move outside of the typical each method constraints. One of the advantages of map is the flexibility it gives you with arrays. If you use each on an array and try to take the square root of the argument, it will simply spit out the same unaltered array. In this case, the following code isn't very helpful:
+        <pre class="commands">arr = [4,16,64,256]
+arr.each{ |x| x = Math.sqrt(x).to_i }
+puts arr.join(", ")   #=>   4, 16, 64, 256
+# Displays 1,2,3,4,5
+        </pre>
+        </p>
+        <p>In case you're wondering, making arr.each! destructive confuses Ruby even more. Don't try it unless you like seeing error messages. What is a poor Rubyist to do when each can't get the job done? Map, my friend, map is the answer. The cool thing about map is that it gives you the flexibility to either create a new modified array (non-destructive) or to modify the existing array. If we try that same code with map instead of each, we get a result that actually makes sense:
+        <pre class="commands">arr = [4,16,64,256]
+arr = arr.map!{|x| Math.sqrt(x).to_i }
+puts arr.join(", ")   #=>   4, 16, 64, 256 
+#=> 2, 4, 8, 16
+        </pre>
+        </p>
+        <p>Of course, map isn't constrained to the world of curly braces. You can also define a method before map, and then use that method to modify each element in the array as you iterate through it. I'm still getting the hang of symbols, but the example below includes a symbol combined with ampersand to reference the previously defined method. At first, you may be tempted to put parenthesis around the "&:x2". The code below stays dry and functions correctly without them:
+        <pre class="commands">class Numb
+  def x2
+    self * 2
+  end
+end
+[2,5,10].map &:x2
+        </pre>
+        <p>That's all for this week's DBC technical blog. Hopefully I can manage to write something next week even if I'm in a turkey-induced coma.
         </p>
   </div>
   <div id="footer">Daniel E. Hanson
