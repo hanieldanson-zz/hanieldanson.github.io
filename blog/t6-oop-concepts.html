@@ -51,10 +51,14 @@
       </div>
   </div>
   <div class="bodypad">
-      <h2>Daniel E. Hanson</h2>
-      <h3>Sub-heading</h3>
-      <h4>10/5/2014</hr>
-        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+      <h2>An Overview of Variable Scope</h2>
+      <h3>More Than Just a Mouthwash Brand</h3>
+      <h4>12/07/2014</hr>
+        <p>I researched the different types of variables available in Ruby prior to to week-6 of Phase 0 at Dev Bootcamp, but this week definitely focused more on the appropriate time to use each. So what are these mysterious variables? Last week, I probably couldn't have listed them all by heart. This week is another story: local variable, instance variable, class variable, global variable, and constant.
+        </p>
+        <p>Before this week, we worked primarily with local variables and instance variables to a lesser extent. Local variables are by far the easiest to grasp but you run into problems with them if you're trying to use them across methods and classes. The first step in my understanding of variable scope was learning the difference between local and instance variables. Local variables can only be used in the method where they are defined. It is usually best practice to use local variables when you don't intend on using the variable again outside of the method. Instance variables give you more flexibility because you can use these them across several methods in addition to the method they were created in.
+        </p>
+        <p>The limitation of instance variables becomes obvious when you begin working with multiple classes. What might we use when presented with this conundrum? The most obviously named class besides constant, the class variable, which allows you to use variables across methods in different classes. If your variable is created outside of the class structure, your two remaining options are global variables and constants. Global variables can be used anywhere in the code. They can be outside of the class structure or inside of a method within a class. Constants actually have global scope if placed outside of a class but they behave differently if you try to modify them. A global variable will allow you to modify the variable throughout the code without any issues. If you try to modify a constant, you will get a warning but you can also still redefine the constant after the warning.
         </p>
   </div>
   <div id="footer">Daniel E. Hanson
