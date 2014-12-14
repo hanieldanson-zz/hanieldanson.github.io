@@ -1,0 +1,320 @@
+<!-- // U3.W7: Design your own Code Combat Mission
+
+// This is a solo challenge
+
+// Your mission description: Bela is the main character and he will have several properties that will allow him to move up, down, right, and left.
+// Goals: Goals: Prevent Banjo Burning Bob from reaching 0 banjos, which means he burned all of the banjos -->
+<!-- Get rewarded with one banjo every time you defeat Banjo Burning Bob
+Reach a total number of 20 banjos to win the game --> 
+<!-- // Characters: Bela and Banjo_Burning_Bob
+// Objects: 1) Bela 2) Banjo_Burning_Bob 3) Belas_magic_banjo 4) Random_banjo
+// Functions: 1) find_banjo 2) count_banjos 2) bob_burns_banjo
+
+// Pseudocode
+// Create Objects for: Bela, Banjo_Burning_Bob, Belas_magic_banjo, Random_banjo and Bobs_torch.
+// Create health and name properties for Bela and a property to set default value that indicates that Bela has not encountered Banjo Burning Bob.
+// Create name and banjo hunt status properties for Banjo Burning Bob.
+// Create property for Belas magic banjo that sets default value to Bela playing magic banjo to false.
+// Create property for Random Banjo that is equal to the name Random Banjo.
+// Create function that allows Be. If he finds the banjos and avoids Bob, count the banjos print something like
+// "Banjo burning crisis averted! X number of banjos saved!" If Bela doesn't avoid Bob, Bob burns the banjos with his torch and prints something like
+// "Oh no! Looks like Bob burned all X of the banjos" -->
+<!-- Add my solution into an html file that includes: styling, buttons that run functions when clicked, and font colors.
+A next function should be created that alternates between whether or not it is Bela's turn or Bob's turn to play. This not only alerts the
+user whose turn it is but it also determines which function is run when the button is clicked. -->
+
+<!-- <html>
+    <head>
+        <style>
+            .topspace {
+                margin-top:10px;
+            }
+            button {
+            	color:#fff;
+            	background-color: #666;
+            	padding:6px;
+            	font-size:16px;
+            }
+            .good {
+                color: green;
+            }
+            .bad {
+                color: red;
+            }
+        </style>
+    </head>
+	<body>
+		<h2>Banjo Bob vs Bela</h2>
+		<button id="next_button" onclick="next();">Ready to save some banjos? Start game</button>
+		<button onclick="location.reload();">Restart</button>
+		<div id="status" class="topspace">
+		</div>
+		<script>
+			// Bela is a banjo player that starts with 10 health
+			var bela = {
+			  name: "Bela",
+			  fingerPickQuantity: 0, 
+			  playing: true
+			}
+
+			// BanjoBurningBob is on the hunt to burn banjos and he is hunting banjos to burn by default.
+			var banjoBurningBob = {
+			  name: "Banjo Burning Bob",
+			  banjoHunting: true,
+			  playing: false
+			}
+
+			// When Bela is playing the magic banjo, bob can't hurt him or the banjos
+			var belasMagicBanjo = {
+			  name: "Bela's Magic Banjo",
+			  playing: false
+			}
+
+			// We start with 10 banjos. None are burned. 
+			var banjo = {
+			  name: "Random Banjos",
+			  burned: false,
+			  quantity: 10
+			}
+
+			// Run the next function
+			function next(){
+				// Bob is playing
+				if (banjoBurningBob.playing==true){
+					playBob();
+					document.getElementById("next_button").innerHTML = "Play Bela's part";
+				}
+				// Bela is playing
+				else {
+					playBela();
+					document.getElementById("next_button").innerHTML = "Play Bob's part";
+				}
+			}
+
+			// Play Bela's part
+			function playBela() {
+				// Assign random fingerPickQuantity
+				bela.fingerPickQuantity = Math.floor((Math.random() * 5) + 1);
+
+				// If Bela has 5 fingerpicks, the magic banjo plays and blocks Bob
+				if (bela.fingerPickQuantity==5){
+					belasMagicBanjo.playing=true;
+				}
+
+				// If Magic Banjo is playing we won the game
+				if (belasMagicBanjo.playing==true) {
+					updateGame("<span class='good'>Bela has 5 fingerpicks - magic banjo time!!</span>");
+					endGame();
+				}
+		    else {
+	        // Bela adds a magic banjo
+	        banjo.quantity++;
+	        updateGame("Bela got one banjo");
+	        banjoCount();
+		    }
+		    banjoBurningBob.playing=true;
+			}
+            
+      // Play Bob's part
+			function playBob() {
+		    // Burn some banjos
+		    banjos_burned = Math.floor((Math.random() * 5) + 1);
+		    banjo.quantity = (banjo.quantity - banjos_burned);
+		    updateGame("<span class='bad'>"+banjos_burned+" banjos burned!</span>");
+		    banjoCount();
+		    // Bob stopped playing
+		    banjoBurningBob.playing=false;
+			}
+            
+      // Count the number of banjos
+			function banjoCount() {
+				// If there are 0 banjos left, we can't burn any more
+		    if (banjo.quantity<=0) {
+		        updateGame("Bob won the game!");
+		        endGame();
+		    }
+		    else if (banjo.quantity>=20) {
+		    	updateGame("20 banjos accumulated! Bela won the game!");
+		    	endGame();
+
+		    }
+		    else {
+		    	updateGame("There are "+banjo.quantity+" banjos left");
+		    }
+			}
+
+			// Update the game status
+			function updateGame(message){
+			  var newElement =document.createElement('div');
+			  newElement.innerHTML = message;
+			  document.getElementById("status").appendChild(newElement);
+			}
+			
+			// End the game
+			function endGame(){
+				document.getElementById("next_button").remove();
+			}
+		</script>
+	</body>
+</html> -->
+
+<!-- Refactored Solution: -->
+
+<html>
+    <head>
+        <style>
+            .topspace {
+                margin-top:10px;
+            }
+            button {
+            	color:#fff;
+            	background-color: #666;
+            	padding:20px;
+            	font-size:16px;
+            }
+            .good {
+                color: green;
+            }
+            .bad {
+                color: red;
+            }
+        </style>
+        <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    </head>
+	<body>
+		<h2>Banjo Burning Bob vs. Bela the Banjo Player</h2>
+		<p>Banjo Burning Bob, if you couldn't tell by his name, abhors banjos and is on the hunt for any banjos that he can find and burn in the country. Bela, the hero in our story, is a mean banjo player tasked with saving the banjos from imminent destruction. The story starts off with Banjo Burning Bob hunting across the country for banjos. Bela is relaxing at home until a local stops by to tell him that Banjo Burning Bob is on the hunt. Bela grabs his magic banjo and looks for his fingerpicks before heading out to search for Banjo Burning Bob. Unfortunately, Bela doesn't have the best memory and forgets his fingerpicks more often than not. If Bela remembers the his banjo fingerpicks, which he needs to play his magic banjo properly, then he automatically wins the first round against Banjo Burning Bob. As much as Banjo Burning Bob hates banjos, even he can't help but fall into a trance when Bela plays that magic banjo. If Bela forgets his fingerpicks, then all bets are off and Banjo Burning Bob is going to torch some banjos. 
+		
+		You are: Bela
+		Goals: Prevent Banjo Burning Bob from reaching 0 banjos, which means he burned all of the banjos
+		       Get rewarded with one banjo every time you defeat Banjo Burning Bob
+		       Reach a total number of 20 banjos to win the game
+		</p>
+		<br>
+		<button id="next_button" onclick="next();">Ready to save some banjos? <br><strong>Start game</strong></button>
+		<br>
+		<br>
+		<button onclick="location.reload();">Game Over?<br><strong>Restart Game</strong></button>
+		<div id="status" class="topspace">
+		</div>
+		<script>
+			// Bela is a banjo player that starts off playing the banjo by default and 
+			var bela = {
+			  name: "Bela",
+			  hostilityLevel: 0, 
+			  playing: true,
+			  attack: false
+			}
+
+			// BanjoBurningBob is on the hunt to burn banjos and he is hunting banjos to burn by default.
+			var banjoBurningBob = {
+			  name: "Banjo Burning Bob",
+			  banjoHunting: true,
+			  playing: false
+			}
+
+			// When Bela is playing the magic banjo, bob can't burn the banjos.
+			var belasMagicBanjo = {
+			  name: "magic banjo",
+			  playing: true
+			}
+
+			// We start with 10 banjos. None are burned. 
+			var banjo = {
+			  name: "Random Banjos",
+			  burned: false,
+			  quantity: 10
+			}
+
+			// Run the next function
+			function next(){
+				// Bob is playing
+				if (banjoBurningBob.playing==true){
+					playBob();
+					document.getElementById("next_button").innerHTML = "Play " +bela.name+"'s turn";
+				}
+				// Bela is playing
+				else {
+					playBela();
+					document.getElementById("next_button").innerHTML = "Play " +banjoBurningBob.name+ "'s turn";
+				}
+			}
+
+			// Play Bela's part
+			function playBela() {
+				// Assign random hostility level for Bela
+				bela.hostilityLevel = Math.floor((Math.random() * 10) + 1);
+
+				// If Bela has 5 fingerpicks, he can play the magic banjo properly.
+				if (bela.hostilityLevel==10){
+					bela.attack=true;
+					belasMagicBanjo.playing=false
+				}
+
+				// If the conditional above is true, then this conditional will be true as well and Bela wins the game automatically by remembering his fingerpics in the first round.
+				if (bela.attack==true) {
+					banjo.quantity = 100;
+					updateGame("<span class='good'><span class='fa fa-exclamation'></span> Bela had zero patience for Banjo Burning Bob this time. Banjo to the knees for the win!!<br><br><strong>You now have " +banjo.quantity+ " banjos as a reward!</strong></span>");
+					var snd = new Audio("../banjotune.mp3");
+					snd.play();
+					snd.currentTime=0;
+					endGame();
+				}
+		    else {
+	        // Bela is rewarded with a banjo banjo for winning a round.
+	        belasMagicBanjo.playing=true;
+	        banjo.quantity++;
+	        updateGame("<span class='good'><span class='fa fa-plus'></span> Bela won a round and got one banjo!</span>");
+	        banjoCount();
+		    }
+		    banjoBurningBob.playing=true;
+			}
+            
+      // Play Bob's part
+			function playBob() {
+		    // Bob burns some banjos
+		    banjos_burned = Math.floor((Math.random() * 5) + 1);
+		    banjo.quantity = (banjo.quantity - banjos_burned);
+		    updateGame("<span class='bad'><span class='fa fa-meh-o'></span>"+banjos_burned+" banjos burned!</span>");
+		    banjoCount();
+		    // Bob stopped playing
+		    banjoBurningBob.playing=false;
+			}
+            
+      // Count the number of banjos
+			function banjoCount() {
+				// If there are 0 banjos left, Bob can't burn any more
+		    if (banjo.quantity<=0) {
+		      updateGame("<span class='bad'><strong><br>" +banjoBurningBob.name+ " burned all of the banjos and won the game!</strong></span>");
+		      var snd = new Audio("http://www.soundjay.com/nature/fire-1.mp3");
+					snd.play();
+					snd.currentTime=0;
+		      endGame();
+		    }
+		    else if (banjo.quantity>=20) {
+		    	updateGame("20 banjos accumulated! Bela won the game!");
+		    	var snd = new Audio("../banjotune.mp3");
+					snd.play();
+					snd.currentTime=0;
+		    	endGame();
+
+		    }
+		    else {
+		    	updateGame("There are "+banjo.quantity+" banjos left");
+		    }
+			}
+
+			// Update the game status
+			function updateGame(message){
+			  var newElement =document.createElement('div');
+			  newElement.innerHTML = message;
+			  document.getElementById("status").appendChild(newElement);
+			}
+			
+			// End the game
+			function endGame(){
+				document.getElementById("next_button").remove();
+			}
+		</script>
+	</body>
+</html>
