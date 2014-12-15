@@ -3,25 +3,27 @@
 // This is a solo challenge
 
 // Your mission description: Bela is the main character and he will have several properties that will allow him to move up, down, right, and left.
-// Goals: Goals: Prevent Banjo Burning Bob from reaching 0 banjos, which means he burned all of the banjos -->
-<!-- Get rewarded with one banjo every time you defeat Banjo Burning Bob
-Reach a total number of 20 banjos to win the game --> 
-<!-- // Characters: Bela and Banjo_Burning_Bob
-// Objects: 1) Bela 2) Banjo_Burning_Bob 3) Belas_magic_banjo 4) Random_banjo
-// Functions: 1) find_banjo 2) count_banjos 2) bob_burns_banjo
+// Goals: Goals: Prevent Banjo Burning Bob from reaching 0 banjos, which means he burned all of the banjos
+Get rewarded with one banjo every time you defeat Banjo Burning Bob
+Reach a total number of 20 banjos to win the game
+// Characters: Bela and Banjo_Burning_Bob
+// Objects: 1) Bela 2) Banjo_Burning_Bob 3) Belas_magic_banjo 4) banjo
+// Functions: 1) next 2) playbela 3) playbob 4) banjocount 5) updategame 6) endgame
 
 // Pseudocode
-// Create Objects for: Bela, Banjo_Burning_Bob, Belas_magic_banjo, Random_banjo and Bobs_torch.
+// Create Objects for: Bela, Banjo_Burning_Bob, Belas_magic_banjo, and banjo.
 // Create health and name properties for Bela and a property to set default value that indicates that Bela has not encountered Banjo Burning Bob.
 // Create name and banjo hunt status properties for Banjo Burning Bob.
 // Create property for Belas magic banjo that sets default value to Bela playing magic banjo to false.
 // Create property for Random Banjo that is equal to the name Random Banjo.
 // Create function that allows Be. If he finds the banjos and avoids Bob, count the banjos print something like
 // "Banjo burning crisis averted! X number of banjos saved!" If Bela doesn't avoid Bob, Bob burns the banjos with his torch and prints something like
-// "Oh no! Looks like Bob burned all X of the banjos" -->
-<!-- Add my solution into an html file that includes: styling, buttons that run functions when clicked, and font colors.
-A next function should be created that alternates between whether or not it is Bela's turn or Bob's turn to play. This not only alerts the
-user whose turn it is but it also determines which function is run when the button is clicked. -->
+// "Oh no! Looks like Bob burned all X of the banjos"
+// Add my solution into an html file that includes: styling, buttons that run functions when clicked, and font colors.
+// A next function should be created that alternates between whether or not it is Bela's turn or Bob's turn to play. This not only alerts the
+// user whose turn it is but it also determines which function is run when the button is clicked. 
+// Add mp3 files for burning sounds when Bob wins and banjo music win Bela wins.
+-->
 
 <!-- <html>
     <head>
@@ -156,9 +158,9 @@ user whose turn it is but it also determines which function is run when the butt
 			}
 		</script>
 	</body>
-</html> -->
+</html>
 
-<!-- Refactored Solution: -->
+// Refactored Solution: -->
 
 <html>
     <head>
@@ -183,13 +185,17 @@ user whose turn it is but it also determines which function is run when the butt
     </head>
 	<body>
 		<h2>Banjo Burning Bob vs. Bela the Banjo Player</h2>
-		<p>Banjo Burning Bob, if you couldn't tell by his name, abhors banjos and is on the hunt for any banjos that he can find and burn in the country. Bela, the hero in our story, is a mean banjo player tasked with saving the banjos from imminent destruction. The story starts off with Banjo Burning Bob hunting across the country for banjos. Bela is relaxing at home until a local stops by to tell him that Banjo Burning Bob is on the hunt. Bela grabs his magic banjo and looks for his fingerpicks before heading out to search for Banjo Burning Bob. Unfortunately, Bela doesn't have the best memory and forgets his fingerpicks more often than not. If Bela remembers the his banjo fingerpicks, which he needs to play his magic banjo properly, then he automatically wins the first round against Banjo Burning Bob. As much as Banjo Burning Bob hates banjos, even he can't help but fall into a trance when Bela plays that magic banjo. If Bela forgets his fingerpicks, then all bets are off and Banjo Burning Bob is going to torch some banjos. 
-		</p>
-		<p><strong>You are:</strong> Bela
-		<br><p><strong>Goals:</strong> Prevent Banjo Burning Bob from reaching 0 banjos, which means he burned all of the banjos
-		<br>Get rewarded with one banjo every time you defeat Banjo Burning Bob
-		<br>Reach a total number of 20 banjos to win the game
-		</p>
+			<p>
+				Banjo Burning Bob, if you couldn't tell by his name, abhors banjos and is on the hunt for any banjos that he can find and burn in the country. Bela, the hero in our story, is a mean banjo player tasked with saving the banjos from imminent destruction. The story starts off with Banjo Burning Bob hunting across the country for banjos. Bela is relaxing at home until a local stops by to tell him that Banjo Burning Bob is on the hunt. Bela grabs his magic banjo before heading out to intercept Banjo Burning Bob before he burns any banjos. As much as Banjo Burning Bob hates banjos, even he can't help but fall into a trance when Bela plays that magic banjo. The trance only lasts so long as the two go back and forth with Bela playing the banjo and Banjo Burning Bob setting banjos ablaze when he comes out of his trance like state. Bela keeps his cool for the most part, but the game may end abruptly if Banjo Burning Bob makes Bela too angry.
+			</p>
+			<p>
+				<strong>You are:</strong> Bela
+				<br>
+			<p><strong>Goals:</strong> Prevent Banjo Burning Bob from burning all the banjos
+				<br>Get rewarded with two banjos every time you save a banjo from being burned
+				<br>Reach a total number of 20 banjos to win the game
+				<br>OR attack Banjo Burning Bob and get a 100 banjo bonus to win the game
+			</p>
 		<br>
 		<button id="next_button" onclick="next();">Ready to save some banjos? <br><strong>Start game</strong></button>
 		<br>
@@ -241,18 +247,18 @@ user whose turn it is but it also determines which function is run when the butt
 
 			// Play Bela's part
 			function playBela() {
-				// Assign random hostility level for Bela
+				// Assign random hostility level for Bela which is an umber between 1 and 10
 				bela.hostilityLevel = Math.floor((Math.random() * 10) + 1);
 
-				// If Bela has 5 fingerpicks, he can play the magic banjo properly.
+				// If Bela has a hostility level of 10, he stops playing the banjo and attacks.
 				if (bela.hostilityLevel==10){
 					bela.attack=true;
 					belasMagicBanjo.playing=false
 				}
 
-				// If the conditional above is true, then this conditional will be true as well and Bela wins the game automatically by remembering his fingerpics in the first round.
+				// If conditional above is true as a result of hostility level, Bela attacks Bob, wins the game, and gets 100 banjos as a bonus.
 				if (bela.attack==true) {
-					banjo.quantity = 100;
+					banjo.quantity=100;
 					updateGame("<span class='good'><span class='fa fa-exclamation'></span> Bela had zero patience for Banjo Burning Bob this time. Banjo to the knees for the win!!<br><br><strong>You now have " +banjo.quantity+ " banjos as a reward!</strong></span>");
 					var snd = new Audio("http://hanieldanson.github.io/banjogame/banjo.m4a");
 					snd.play();
@@ -260,7 +266,7 @@ user whose turn it is but it also determines which function is run when the butt
 					endGame();
 				}
 		    else {
-	        // Bela is rewarded with a banjo banjo for winning a round.
+	        // Bela is rewarded with two banjos for winning a round.
 	        belasMagicBanjo.playing=true;
 	        banjo.quantity+=2;
 	        updateGame("<span class='good'><span class='fa fa-plus'></span> Bela won a round and got a two banjo bonus!</span>");
@@ -271,7 +277,7 @@ user whose turn it is but it also determines which function is run when the butt
             
       // Play Bob's part
 			function playBob() {
-		    // Bob burns some banjos
+		    // Bob burns a random number of banjos
 		    banjos_burned = Math.floor((Math.random() * 5) + 1);
 		    banjo.quantity = (banjo.quantity - banjos_burned);
 		    updateGame("<span class='bad'><span class='fa fa-meh-o'></span>"+banjos_burned+" banjos burned!</span>");
@@ -280,9 +286,9 @@ user whose turn it is but it also determines which function is run when the butt
 		    banjoBurningBob.playing=false;
 			}
             
-      // Count the number of banjos
+      // Count the number of banjos after each step and create condtions for Bob winning and Bela winning.
 			function banjoCount() {
-				// If there are 0 banjos left, Bob can't burn any more
+				// If there are 0 banjos left, Bob wins the game and a burning mp3 is played.
 		    if (banjo.quantity<=0) {
 		      updateGame("<span class='bad'><strong><br>" +banjoBurningBob.name+ " burned all of the banjos and won the game!</strong></span>");
 		      var snd = new Audio("http://www.soundjay.com/nature/fire-1.mp3");
@@ -290,27 +296,30 @@ user whose turn it is but it also determines which function is run when the butt
 					snd.currentTime=0;
 		      endGame();
 		    }
+
+		    // If the number of banjos reaches 20 or more, Bela wins the game and a banjo tune is played.
 		    else if (banjo.quantity>=20) {
 		    	updateGame("20 banjos accumulated! Bela won the game!");
 		    	var snd = new Audio("http://hanieldanson.github.io/banjogame/banjo.m4a");
 					snd.play();
 					snd.currentTime=0;
 		    	endGame();
-
 		    }
+
+		    // message for update game alerting user how many banjos are left.
 		    else {
 		    	updateGame("There are "+banjo.quantity+" banjos left");
 		    }
 			}
 
-			// Update the game status
+			// Update the game status with a message argument that is appended to a previously created element in the html
 			function updateGame(message){
-			  var newElement =document.createElement('div');
+			  var newElement = document.createElement('div');
 			  newElement.innerHTML = message;
 			  document.getElementById("status").appendChild(newElement);
 			}
 			
-			// End the game
+			// End the game when certain condtions are met with this function.
 			function endGame(){
 				document.getElementById("next_button").remove();
 			}
