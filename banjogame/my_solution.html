@@ -198,7 +198,7 @@ user whose turn it is but it also determines which function is run when the butt
 		<div id="status" class="topspace">
 		</div>
 		<script>
-			// Bela is a banjo player that starts off playing the banjo by default and 
+			// Bela is a banjo player that starts off playing the banjo by default. He has a hostility level of 0 and attack mode is set to false.
 			var bela = {
 			  name: "Bela",
 			  hostilityLevel: 0, 
@@ -206,14 +206,14 @@ user whose turn it is but it also determines which function is run when the butt
 			  attack: false
 			}
 
-			// BanjoBurningBob is on the hunt to burn banjos and he is hunting banjos to burn by default.
+			// BanjoBurningBob is on the hunt to burn banjos and he is hunting banjos to burn by default. Bob is set so his turn is set to false.
 			var banjoBurningBob = {
 			  name: "Banjo Burning Bob",
 			  banjoHunting: true,
 			  playing: false
 			}
 
-			// When Bela is playing the magic banjo, bob can't burn the banjos.
+			// Set a property for Bela's Magic Banjo so currently being played is equal to true.
 			var belasMagicBanjo = {
 			  name: "magic banjo",
 			  playing: true
@@ -221,7 +221,6 @@ user whose turn it is but it also determines which function is run when the butt
 
 			// We start with 10 banjos. None are burned. 
 			var banjo = {
-			  name: "Random Banjos",
 			  burned: false,
 			  quantity: 10
 			}
@@ -263,8 +262,8 @@ user whose turn it is but it also determines which function is run when the butt
 		    else {
 	        // Bela is rewarded with a banjo banjo for winning a round.
 	        belasMagicBanjo.playing=true;
-	        banjo.quantity++;
-	        updateGame("<span class='good'><span class='fa fa-plus'></span> Bela won a round and got one banjo!</span>");
+	        banjo.quantity+=2;
+	        updateGame("<span class='good'><span class='fa fa-plus'></span> Bela won a round and got a two banjo bonus!</span>");
 	        banjoCount();
 		    }
 		    banjoBurningBob.playing=true;
