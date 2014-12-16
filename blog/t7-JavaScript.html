@@ -51,78 +51,53 @@
       </div>
   </div>
   <div class="bodypad">
-      <h2>A Breakdown of Variable Scope</h2>
-      <h3>Car Buying Ruby Code To Boot</h3>
-      <h4>12/07/2014</hr>
-        <p>I researched the different types of variables available in Ruby prior to to week-6 of Phase 0 at Dev Bootcamp, but this week definitely focused more on the appropriate time to use each. So what are these mysterious variables? Last week, I probably couldn't have listed them all by heart. This week is another story: local variable, instance variable, class variable, global variable, and constant. BOOM.
+      <h2 class="title">JavaScript Objects vs. Ruby Hashes</h2>
+      <h3 class ="subtitle">Oh so Similar but Not Quite the Same</h3>
+      <h4 class="date">12/15/2014</h4>
+        <p class ="blog">This past week was my first foray into JavaScript after focusing on Ruby and HTML/CSS previously. It was definitely a little jarring to switch to a new language when I haven't even mastered Ruby yet. Since I come from a foreign language background, this reminds me of learning Portuguese in college and then trying to switch back to Spanish without having fully mastered Portuguese. It's not easy when you haven't mastered one of the two, but I think it ultimately trains you to be quick on your feet and flip the switch on a moment's notice.
         </p>
-        <p>Before this week, we worked primarily with local variables and instance variables to a lesser extent. Local variables are by far the easiest to grasp but you run into problems with them if you're trying to use them across methods and classes. The first step in my understanding of variable scope was learning the difference between local and instance variables. Local variables can only be used in the method where they are defined. It is usually best practice to use local variables when you don't intend on using the variable again outside of the method. Instance variables give you more flexibility because you can use these them across several methods in addition to the method they were created in. In the example below, I used an instance variable for car using the @ symbol. Without the @ symbol, the cars variable is simply a local variable. By making cars an instance variable, I can use cars in all of my subsequent methods since they all fall within the same class.
+        <p class ="blog">One interesting thing I noticed fairly quickly while reading through <i>Eloquent Javascript</i> by Marijn Haverbeke is that JavaScript Objects looked really similar to the Ruby Hashes I had been using for several weeks in Phase 0 of Dev Bootcamp. The first difference I noticed was the use of var in Javascript to declare the variable name of the object. This is not necessary in Ruby as you can see below. The syntax for key value pairs inside the hash is also slightly different.
         </p>
-        <br>
+          <br>
         <p>
-        <pre class="commands">class CarShopping
-  def initialize(*cars)
-    @cars = *cars
-  end
-  
-  def testdrive
-    @cars.each { |car| puts "Test driving #{car}" }
-  end
-  
-  def buycar
-    puts "I'll take the #{@cars.sample}!"
-  end
-end
- 
-cars = CarShopping.new("Mini Cooper","Volkswagen Karmann Ghia","MG MGB", "Triumph TR4")
-p cars.testdrive
-p cars.buycar
-        </pre>
-        <br>
+          <pre class="commands2">
+<u>Ruby Hash Example:</u>
+instruments = { :guitars => 47, 
+:banjos => 21,
+:fiddles => 17 
+}
+
+
+<u>JavaScript Object Example:</u>
+var instruments = { guitars: 47, 
+banjos: 21,
+fiddles: 17
+}
+          </pre>
+          <br>
         </p>
-        <p>The limitation of instance variables becomes obvious when you begin working with multiple classes. What might we use when presented with this conundrum? The most obviously named class besides constant, the class variable, which allows you to use variables across methods in different classes. If your variable is created outside of the class structure, your two remaining options are global variables and constants. Global variables can be used anywhere in the code. They can be outside of the class structure or inside of a method within a class. Constants actually have global scope if placed outside of a class but they behave differently if you try to modify them. A global variable will allow you to modify the variable throughout the code without any issues. If you try to modify a constant, you will get a warning but you can also still redefine the constant after the warning. Check out the modified code below to see what I added.
+        <p class ="blog">Another difference that I noticed is in the notation for printing out values. In Ruby, you would use puts, the hash name, and insert the key inside square brackest in order to return the value. JavaScript uses dot notation and a slightly different method to display the same thing. The method name console.log() in JavaScript is also a little more verbose than writing a simple puts method in Ruby. I added puts and console.log() to the same examples below to put things in context.
         </p>
-        <br>
+          <br>
         <p>
-        <pre class="commands">class CarShopping
-  def initialize(*cars)
-    @cars = *cars
-  end
-  
-  def testdrive
-    @cars.each { |car| puts "Test driving #{car}" }
-  end
-  
-  def buycar
-    $newcar = @cars.sample
-    puts "I'll take the #{$newcar}!"
-  end
-end
+          <pre class="commands2">
+<u>Ruby Hash Example:</u>
+instruments = { :guitars => 47, 
+:banjos => 21,
+:fiddles => 17 
+} 
 
-class CarAccessories
-  def initialize(*accessories)
-    @accessories = *accessories
-  end
+puts instruments[:banjos]
 
-  def buyeverything
-    puts "Since I just bought this fancy #{$newcar}, I'm going to splurge some more and by all of these accessories: #{@accessories}"
-  end
 
-  def justkidding
-    puts "Just kidding, I would never do that to my #{$newcar}!"
-  end
-end
- 
-cars = CarShopping.new("Mini Cooper","Volkswagen Karmann Ghia","MG MGB", "Triumph TR4")
-accessories = CarAccessories.new("Spoiler, rims, tinted window kit, pine tree air freshener, and stickers")
-p cars.testdrive
-p cars.buycar
-p accessories.buyeverything
-p accessories.justkidding
-        </pre>
-        </p>
-        <br>
-        <p>In the example above, I have modified the code to include a global variable with the $ symbol. This allows me to take the car that I bought in the buycar method and call that global variable in a new class called CarAccessories. I would not be able to insert the newcar variable in the CarAccessories class if I changed that global variable to an instance or local variable. Hopefully this solidifies some concepts for you if you were on the fence about when to use different types of variables.
+<u>JavaScript Object Example:</u>
+var instruments = { guitars: 47, 
+banjos: 21,
+fiddles: 17
+}
+
+console.log(instruments.banjos)
+          </pre>
         </p>
   </div>
   <div id="footer">Daniel E. Hanson
