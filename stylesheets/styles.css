@@ -116,6 +116,11 @@ span.fontcolor2 {
   color: #71eeb8;
 }
 
+span.big {
+  font-size: 16px;
+  font-weight: bold;
+}
+
 span.date {
   color: #B8B8C0;
   margin-right: 10px;
