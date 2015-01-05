@@ -118,7 +118,9 @@ span.fontcolor2 {
 
 span.big {
   font-size: 16px;
+  font-style: normal;
   font-weight: bold;
+  text-align: center;
 }
 
 span.date {
