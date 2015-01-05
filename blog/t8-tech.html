@@ -51,20 +51,65 @@
       </div>
   </div>
   <div class="bodypad">
-      <h2 class="title">Title</h2>
-      <h3 class="subtitle">Subtitle</h3>
-      <h4 class="date">MM/DD/YYYY</h4>
+      <h2 class="title">Bridging the Gap with Active Record</h2>
+      <h3 class="subtitle">A Basic Overview</h3>
+      <h4 class="date">01/04/2015</h4>
         <p class="blog">
+        Active Record is a pattern that wraps tables in classes. Why is this helpful? Active Record bridges the gap between business logic languages and database languages. In the past, working with these two types of languages required coding expertise in both. Now you can manage your database in business logic languages without database language coding. 
         </p>
-          <br>
-        <p>
+        <p class="blog">
+        How does it bridge the aforementioned gap? Active Record is an implementation of Object-Relational Mapping (ORM). This means that it serves as a link between logic code and databases. In Ruby on Rails, this entails writing Ruby code to link the SQL database with logic code.
+        </p>
+        <p class="blog">
+        The creation of migrations is another key element in this process. Migrations give you flexibility to update your database schema over time. This flexibility allows you to easily modify tables and columns in your database schema. In case you're wondering, migrations support all the basic data types: string, text, integer, float, datetime, timestamp, time, date, binary and boolean.
+        </p>
+      <h3 class="subtitle">CRUD (Create, Read, Update, Delete)</h3>
+        <p class="blog">
+        To keep the focus of this blog laser-focused, I'll dive into some basic examples. The most basic thing you can do with Active Record is create a new record. An example might look something like this:
+        </p>
           <pre class="commands2">
+p  = Post.new
+p.title = "Active Record Basics"
+p.save // saves the new record to the database
+
+## The simple version:
+Post.create(:title => "Active Record Basics")
           </pre>
           <br>
         </p>
-        <p class="blog">
+        <p class="blog">This code allows us to add a new record in the "title" column of our database with the name of the post, "Active Record Basics." Once you have records in the database, you can access or read them. There are many ways to access records. Below is a sampling of these data access methods:
         </p>
           <br>
+          <pre class="commands2">
+p = Post.first ## Finds the first record
+p = Post.find(5) ## Finds the post with ID = 5
+p = Post.exists?(5) ## Returns true if there is a matching id in a record.
+          </pre>
+          <br>
+        <p class="blog">To update a record, you can use one of the methods used above to access it first. Then you simply modify it and save:
+        </p>
+          <br>
+          <pre class="commands2">
+p = Post.find(5)
+p.title = "Mystery Blog Post"
+p.save
+
+## The simple version:
+p = Postfind(5)
+p.update_attributes(:title=>"Mystery Blog Post")
+          </pre>
+          <br>
+        <p class="blog">
+The last basic way to operate on data is delete. As you might suspect, this can be a great tool on one end and potentially disastrous if you mistype something. Having said that, deleting a record is extremely easy:
+        </p>
+          <br>
+          <pre class="commands2">
+p = Post.find(5)
+p.destroy
+          </pre>
+          <br>
+        <p class="blog">That's it, the record with ID 5 is toast. If for some reason you want to wipe the slate clean, you can also use the destroy_all method. There many other useful things you can do with Active Record in addition to the methods mentioned above. This is obviously a very basic overview of the subject that scratches the surface just barely. I'll be sure to revisit this topic once we dive into more Rails and Database work at Dev Bootcamp.
+        </p>
   </div>
   <div id="footer">Daniel E. Hanson
   </div>
