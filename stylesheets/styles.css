@@ -36,6 +36,22 @@ p.blog {
   padding: 0px 50px 0px 50px;
 }
 
+p.cheat {
+  font-size: 13px;
+}
+
+div.bodypad {
+  padding: 0px 10px 0px 10px;
+}
+
+div.columns {
+  padding: 0px 10px 0px 10px;
+  font-size: 13px;
+  -webkit-column-count: 3; /* Chrome, Safari, Opera */
+  -moz-column-count: 3; /* Firefox */
+  column-count: 3;
+}
+
 .mylinks a {
   color: #FFF;
   text-decoration: none;
@@ -60,22 +76,12 @@ p.blog {
   padding-top: 15px;
 }
 
-.bodypad {
-  padding: 0px 10px 0px 10px;
-}
-
-.date {
-  color: #B8B8C0;
-  margin-right: 10px;
-  text-align: justify;
-}
-
 .globallinks {
   padding: 20px;
 }
 
-.commands {
-  background: black;
+pre.commands {
+  background: #313131;
   max-width: 100%;
   color: white;
   font-style: italic;
@@ -83,8 +89,8 @@ p.blog {
 }
 
 /*DELETE commands2 AFTER CHANGING FORMATTING FOR OLD BLOG POSTS*/
-.commands2 {
-  background: black;
+pre.commands2 {
+  background: #313131;
   color: white;
   font-style: italic;
   margin-left: 50px;
@@ -92,12 +98,32 @@ p.blog {
   padding: 10px 5px 0px 5px;
 }
 
+pre.cheatcommand {
+  background: #313131;
+  color: white;
+  font-style: italic;
+  font-size: 13px;
+  max-width: 455px;
+  padding: 10px 5px 0px 5px;
+}
+
+span.fontcolor {
+  font-weight: bold;
+  color: #6FA0DA;
+}
+
+span.date {
+  color: #B8B8C0;
+  margin-right: 10px;
+  text-align: justify;
+}
+
 .weaksauce {
   font-weight: 300;
 }
 
 #headerimg {
-  width:100%;
+  width: 100%;
   height: 500px;
   border: 1px solid gray;
   border-radius: 2px;

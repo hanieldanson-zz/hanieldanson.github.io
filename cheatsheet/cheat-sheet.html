@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="My Personal Website">
+  <meta name="author" content="Daniel Hanson">
+  <link href='http://fonts.googleapis.com/css?family=Quicksand:300,400,700' rel='stylesheet' type='text/css'>
+  <link type="text/css" rel="stylesheet" href="../stylesheets/styles.css"/>
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+
+  <title>Daniel Hanson</title>
+</head>
+<body>
+  <table align="right" class="mytable mylinks">
+    <tr>
+      <td>
+        <a href="../index.html">Home</a>
+      </td>
+      <td>
+        <a href="../about/index.html">About</a>
+      </td>
+      <td>
+        <a href="../experience/index.html">Experience</a>
+      </td>
+      <td>
+        <a href="../education/index.html">Education</a>
+      </td>
+      <td>
+        <a href="../blog/index.html">Blog</a>
+      </td>
+      <td>
+        <a href="../projects/index.html">Projects</a>
+      </td>
+      <td>
+        <a href="mailto:hanson.e.daniel@gmail.com">Contact</a>
+      </td>
+    </tr>
+  </table>
+  <img id="headerimg" src="../imgs/cover.jpg"/>
+    <div id="profile">
+      <img src="../imgs/Mug_updated.jpg" class="profile-img" />
+      <div>
+        <a href="https://twitter.com/daniel_hanson" class="fa fa-twitter fa-2x">
+        </a>
+        <a href="https://github.com/hanieldanson" class="fa fa-github fa-2x">
+        </a>
+        <a href="https://linkedin.com/in/dehanson" class="fa fa-linkedin fa-2x">
+        </a>
+      </div>
+  </div>
+  <div class="columns">
+  <p><strong>Variables</strong> are containers for data and can be either numbers or words (a string). The syntax follows:
+  </p>
+  <p>
+    <pre class="cheatcommand">
+var *nameOfVariable* = *value*
+var x = 5;
+var message = “Hello world!”;
+var empty; // undefined variable "empty."
+// Undefined is not a string or integer.
+// Note: you cannot create two variables with the same name
+    </pre>
+  </p>
+  <p><strong>JavaScript Objects</strong> are similar to real objects. They have properties and you can do things to the them. In JavaScript, doing something to an object can be described as using a method on an object. Create a JavaScript Object with:
+  </p>
+    <pre class="cheatcommand">
+<span class="fontcolor">Object Literal:</span> Most common way to create object
+var myObject = {}     // An empty object
+var person = {      // An object with 2 items
+  name: “Bob”;
+  age: 19;
+}
+<span class="fontcolor">Object Constructor:</span> Next most common way to create object
+var person = new Object ();
+person.name = “Bob”;
+person.age = 19;
+
+<span class="fontcolor">The Constructor pattern</span> is another way to use the object 
+constructor with <span class="fontcolor">this</span>, referring to the global object.
+function Person(theName, theAge) {
+  this.name = theName;
+  this.age = theAge;
+}
+var bob = Person(“Bob”, 19);
+
+<span class="fontcolor">The Prototype pattern</span> can also be used as an alternative 
+for creating objects. For example:
+function Person() { }
+Person.prototype.name = “Bob”;
+Person.prototype.age = 19;
+var bob = new Person(); // calls constructor to create 
+bob w/ the properties name = “Bob” and age = 19
+    </pre>
+  <p><strong>Properties</strong> are values associated with a JavaScript object. Properties can be accessed two ways:
+  </p>
+    <pre class="cheatcommand">
+<span class="fontcolor">Dot notation:</span> obj.propertyName 
+<span class="fontcolor">Square bracket notation:</span> obj[propertyName]
+    </pre>
+  <p>Accessing and Enumerating Properties on Objects using a for/in loop:
+  </p>
+    <pre class="cheatcommand">
+var school = {name:”DBC”,loc:”Chicago”,cohort1:”Squirrels”}
+for (var eachItem in school) {
+console.log(eachItem); // Prints name, loc, cohort1
+}
+    </pre>
+  <p><strong>Dot notation</strong> is easier to write and read.  Square bracket notation allows access to properties containing special characters and selection of properties using variables.
+  </p>
+    <pre class="cheatcommand">
+var school = {name:”DBC”,loc:”Chicago”,cohort1:”Squirrels”}
+console.log(school.name); // DBC
+console.log(school[“cohort” + 1]); // Squirrels
+    </pre>
+  <p><strong>hasOwnProperty</strong> returns a boolean value indicating if the object being called has a property with the name of the argument in parenthesis. This is useful when enumerating properties of an object in the for...in construct.
+    <pre class="cheatcommand">
+var school - {schoolName:”DBC”};
+console.log(school.hasOwnProperty(“schoolName”));
+    </pre>
+  <p>Each data property has 3 <strong>attributes</strong>:</p>
+  <pre class="cheatcommand">
+<span class="fontcolor">Configurable:</span> Specifies if it can be deleted or changed.
+<span class="fontcolor">Enumerable:</span> Specifies if it can be returned in for/in loop.
+<span class="fontcolor">Writable:</span> Specifies if it can be changed.
+  </pre>
+  <p>Every JavaScript function has a <strong>prototype property</strong> (empty by default), and you attach properties and methods on this prototype property when implementing inheritance. The prototype property is not enumerable (inaccessible in for/in loop).
+  </p>
+  <p>An object’s <strong>prototype attribute</strong> points to the object’s “parent”—the object it inherited its properties from. The prototype attribute is normally referred to as the prototype object, and it is set automatically when you create a new object.
+  </p>
+
+
+Box 3 (object definitions)
+
+JavaScript functions are defined by either a declaration or an expression. Functions are sequences of instructions that can be triggered by one line of code -- substitute repeated code with functions.
+
+Function Declarations:
+function functionName (parameter1, parameter2) {
+  ...
+}
+
+Functions can also return values. Here, a function requires two paramaters, and returns their sum.
+function doSomething(x, y) {
+  return x + y;
+}
+
+Function Expression:
+Function expressions are an alternative to function declarations:
+var doSomething = function (x, y) { return x + y; }
+
+
+For both methods, you can call the function in the same way:
+var sum = doSomething(5, 12);  // 5 + 12 ==> returns 17
+
+Object Literals:
+Object literals are essentially a list of key, value pairs. For example:
+var Human = {
+  age: 19,    // must have a comma unless it’s the last pair
+  name: “Jamal”,
+  isAdult: true,
+
+  // a function in an object
+  printInfo: function() {  
+Console.log(Human.name + “ is “ + Human.age + “ years old!”);
+} // last pair, no comma
+}; // must end with a semicolon
+Human.age = 20; // the value can be changed
+Human.printInfo(); // prints “Jamal is 20 years old!” to the console
+
+
+
+Box 4 (Object methods)
+
+Access a method with the following syntax:
+obj.methodName();
+
+The most reliable method to see if an object is an array:
+isArr = Object.prototype.toString.call(arrayiter) == '[object Array]';
+
+Number Methods
+constructor(): Returns the function that created this object's instance. By default this is the Number object.
+toFixed(): Formats a number with a specific number of digits to the right of the decimal.
+toPrecision(): Defines how many total digits (including digits to the left and right of the decimal) to display of a number.
+toString(): Returns the string representation of the number's value.
+
+Boolean Methods
+toSource(): Returns a string containing the source of the Boolean object; you can use this string to create an equivalent object.
+toString(): Returns a string of either "true" or "false" depending upon the value of the object.
+
+String Methods
+charAt(index): Returns the character at the specified index.
+concat(string1, string2): Combines the text of two strings and returns a new string.
+indexOf(string): Returns the index within the calling String object of the first occurrence of the specified value, or -1 if not found.
+length(): Returns the length of the string.
+match(regex): Used to match a regular expression against a string.
+replace(findThisStr, replacementStr): Used to find a match between a regular expression and a string, and to replace the matched substring with a new substring.
+search(str): Searches the string for a matching string or reg. expression -- returns the index at the match
+slice(index1, index2): Extracts a section of a string and returns a new string.
+split(delimeter): Splits a String object into an array of strings by separating the string into substrings.
+
+Array Methods
+concat(array): Returns a new array comprised of this array joined with other array(s) and/or value(s).
+every(): Returns true if every element in this array satisfies the provided testing function.
+filter(): Creates a new array with all of the elements of this array for which the provided filtering function returns true.
+forEach(): Calls a function for each element in the array.
+indexOf(obj): Returns the first (least) index of an element within the array equal to the specified value, or -1 if none is found.
+join(): Joins all elements of an array into a string.
+map(funct): Creates a new array with the results of calling a provided function on every element.
+pop(): Removes the last element from an array and returns that element.
+push(object): Adds one or more elements to the end of an array and returns the new length of the array.
+reduce(): Apply a function simultaneously against two values of the array (from left-to-right) as to reduce it to a single value.
+reverse(): Reverses the order of the elements of an array -- the first becomes the last, and the last becomes the first.
+shift(): Removes the first element from an array and returns that element.
+slice(): Extracts a section of an array and returns a new array.
+sort(): Sorts the elements of an array.
+splice(): Adds and/or removes elements from an array.
+</p>
+  </div>
+  <div id="footer">Daniel E. Hanson
+  </div>
+</body>
+</html>
