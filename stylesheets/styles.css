@@ -46,7 +46,7 @@ div.bodypad {
 
 div.columns {
   padding: 0px 10px 0px 10px;
-  font-size: 13px;
+  font-size: 12px;
   -webkit-column-count: 3; /* Chrome, Safari, Opera */
   -moz-column-count: 3; /* Firefox */
   column-count: 3;
@@ -110,6 +110,10 @@ pre.cheatcommand {
 span.fontcolor {
   font-weight: bold;
   color: #6FA0DA;
+}
+
+span.fontcolor2 {
+  color: #71eeb8;
 }
 
 span.date {
