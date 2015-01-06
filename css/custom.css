@@ -54,7 +54,7 @@ code {
 .background-img {
 /*  background:#12343e url(../imgs/cover.jpg) no-repeat center center fixed;-webkit-background-size:cover;-moz-background-size:cover;-o-background-size:cover;background-size:cover;height:900px;text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);color:#fff;
 */
-background:#12343e url(../imgs/cover.jpg) center center;-webkit-background-size:cover;-moz-background-size:cover;-o-background-size:cover;background-size:cover;height:700px;
+background:#12343e url(../imgs/ncover.png) center center;-webkit-background-size:cover;-moz-background-size:cover;-o-background-size:cover;background-size:cover;height:800px;
 }
 
 .profile-img {
@@ -71,4 +71,13 @@ background:#12343e url(../imgs/cover.jpg) center center;-webkit-background-size:
 
 .top-space-big {
   margin-top: 100px;
+}
+
+@media (min-width: 768px){
+    .navbar-nav{
+        margin: 0 auto !important;
+        display: table !important;
+        table-layout: fixed !important;
+        float:none !important;
+    }
 }
