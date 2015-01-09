@@ -80,7 +80,7 @@ p cars.buycar
         </pre>
         <br>
         </p>
-        <p>The limitation of instance variables becomes obvious when you begin working with multiple classes. What might we use when presented with this conundrum? The most obviously named class besides constant, the class variable, which allows you to use variables across methods in different classes. If your variable is created outside of the class structure, your two remaining options are global variables and constants. Global variables can be used anywhere in the code. They can be outside of the class structure or inside of a method within a class. Constants actually have global scope if placed outside of a class but they behave differently if you try to modify them. A global variable will allow you to modify the variable throughout the code without any issues. If you try to modify a constant, you will get a warning but you can also still redefine the constant after the warning. Check out the modified code below to see what I added.
+        <p>The limitations of instance variables become obvious when you begin working with multiple classes. What might we use when presented with this conundrum? The most obviously named class besides constant, the class variable, which allows you to use variables across methods in different classes. If your variable is created outside of the class structure, your two remaining options are global variables and constants. Global variables can be used anywhere in the code. They can be outside of the class structure or inside of a method within a class. Constants actually have global scope if placed outside of a class but they behave differently if you try to modify them. A global variable will allow you to modify the variable throughout the code without any issues. If you try to modify a constant, you will get a warning, but you can also still redefine the constant after the warning. Check out the modified code below to see what I added.
         </p>
         <br>
         <p>
@@ -105,7 +105,7 @@ class CarAccessories
   end
 
   def buyeverything
-    puts "Since I just bought this fancy #{$newcar}, I'm going to splurge some more and by all of these accessories: #{@accessories}"
+    puts "Since I just bought this fancy #{$newcar}, I'm going to splurge some more and buy all of these accessories: #{@accessories}"
   end
 
   def justkidding
