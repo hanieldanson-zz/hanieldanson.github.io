@@ -9,6 +9,14 @@ body {
   margin-bottom: 60px;
   background-color: #222 !important;
 }
+
+.animated {
+  -webkit-animation-duration: 5s;
+          animation-duration: 5s;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+}
+
 /*  Remove text decoration (on by default in bootstrap)*/
 .myLinks a {
   text-decoration: none !important;
