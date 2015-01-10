@@ -5,7 +5,6 @@ html {
   min-height: 100%;
 }
 body {
-  display:none; /* display set to none to let images load before loading the rest of the page.
   /* Margin bottom by footer height */
   margin-bottom: 60px;
   background-color: #222 !important;
